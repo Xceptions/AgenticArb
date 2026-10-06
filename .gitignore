@@ -5,3 +5,4 @@ __pycache__/
 chroma_db/
 *.egg-info
 .pytest_cache
+agent_keypair.json
