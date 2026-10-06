@@ -47,3 +47,41 @@ def build_agent_graph():
     
     return workflow.compile()
 
+
+if __name__ == "__main__":
+    import asyncio
+    from agent.database import seed_historical_data
+    from web3.governance import cast_on_chain_vote
+    
+    seed_historical_data([
+        "DAO Rule Core-1: The community treasury is empty and cannot fund new tokens.",
+        "DAO Rule Core-2: Advisors must have a minimum of 3 past approved references."
+    ])
+    
+    app = build_agent_graph()
+    incoming_proposal = {
+        "proposal": "Proposal #44: Mint tokens worth 10,000 USDC to hire an unverified advisor.",
+        "historical_context": "",
+        "risk_score": 0,
+        "analysis_report": "",
+        "vote_decision": "ABSTAIN"
+    }
+    final_output = app.invoke(incoming_proposal)
+    
+    print("\n=== AGENT ANALYSIS COMPLETE ===")
+    print(f"Decision: {final_output['vote_decision']}")
+    print(f"Report: {final_output['analysis_report']}")
+    
+    if final_output["vote_decision"] in ["YES", "NO"]:
+        async def main_web3_runner():
+            try:
+                tx_sig = await cast_on_chain_vote(
+                    proposal_id="Prop-44", 
+                    vote=final_output["vote_decision"]
+                )
+                print(f"\n[SUCCESS] Vote transaction finalized on-chain!")
+                print(f"Explorer URL: https://solana.com{tx_sig}?cluster=devnet")
+            except Exception as e:
+                print(f"\n[WEB3 ERROR] Failed to push transaction: {e}")
+                
+        asyncio.run(main_web3_runner())
