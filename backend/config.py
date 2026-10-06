@@ -10,7 +10,9 @@ class Settings(BaseSettings):
     EMBEDDING_MODEL: str
     CHROMA_COLLECTION_NAME: str
     SOLANA_RPC_URL: str
-    
+    RPC_URL: str
+    MEMO_PROGRAM_ID: str
+
     BASE_DIR: str = os.path.dirname(os.path.abspath(__file__))
     DB_FOLDER_NAME: str = os.getenv("CHROMA_DB_DIR", "chroma_db")
     DB_DIR: str = os.path.join(BASE_DIR, DB_FOLDER_NAME)
