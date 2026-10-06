@@ -29,6 +29,7 @@ backend/
 │   └── governance.py     # Asynchronous versioned transaction signer & broadcaster
 ├── tests/                # Test suites tracking module behavior
 ├── config.py             # Pydantic-Settings environment validation setup
+├── requirements.txt      # Requirement files for virtual env setup
 └── .env                  # Configuration variables (git ignored)
 ```
 
