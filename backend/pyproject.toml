@@ -1,5 +1,5 @@
 [project]
-name = "solana-governance-agent"
+name = "AgenticArb"
 version = "0.1.0"
 description = "An Agentic RAG system for analyzing Solana DAO governance proposals"
 readme = "README.md"
@@ -8,12 +8,19 @@ dependencies = [
     "langchain>=0.3.0",
     "langchain-community>=0.3.0",
     "langchain-chroma>=0.1.4",
+    "langchain-ollama>=0.2.0", 
     "langchain-huggingface>=0.1.0",
     "langgraph>=0.2.0",
     "solana>=0.35.0",
     "solders>=0.21.0",
+    "pydantic-settings>=2.0.0",
+    "python-dotenv>=1.0.0",
 ]
 
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["web3", "agent"]
+py-modules = ["config"]
