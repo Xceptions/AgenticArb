@@ -12,7 +12,7 @@ class Settings(BaseSettings):
     SOLANA_RPC_URL: str
     
     BASE_DIR: str = os.path.dirname(os.path.abspath(__file__))
-    DB_FOLDER_NAME = os.getenv("CHROMA_DB_DIR", "chroma_db")
+    DB_FOLDER_NAME: str = os.getenv("CHROMA_DB_DIR", "chroma_db")
     DB_DIR: str = os.path.join(BASE_DIR, DB_FOLDER_NAME)
 
 settings = Settings()
