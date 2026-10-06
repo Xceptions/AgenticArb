@@ -1,0 +1,23 @@
+[
+  {
+    "id": "critical_risk_mint_empty_treasury",
+    "proposal": "Proposal #44: Mint tokens worth 10,000 USDC to hire an unverified advisor.",
+    "mocked_historical_docs": [
+      "DAO Rule Core-1: The community treasury empty and cannot fund new tokens.",
+      "DAO Rule Core-2: Advisors must have a minimum of 3 past approved references."
+    ],
+    "expected_risk_score": 9,
+    "expected_vote_decision": "NO",
+    "expected_report_keyword": "CRITICAL RISK"
+  },
+  {
+    "id": "low_risk_standard_proposal",
+    "proposal": "Proposal #45: Standard optimization update to the UI frontend styling.",
+    "mocked_historical_docs": [
+      "DAO Rule Core-5: UI components are maintained by the core engineering group."
+    ],
+    "expected_risk_score": 2,
+    "expected_vote_decision": "YES",
+    "expected_report_keyword": "Low Risk"
+  }
+]
