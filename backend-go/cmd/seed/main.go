@@ -13,9 +13,10 @@ func main() {
 	ctx := context.Background()
 
 	fmt.Println("Initializing standalone data loading script...")
+	fmt.Printf("Targeting Chroma Node: %s\n", config.GlobalSettings.ChromaBaseURL)
 	fmt.Printf("Targeting Ollama Node: %s\n", config.GlobalSettings.OllamaBaseURL)
 	fmt.Printf("Embedding Engine Model: %s\n", config.GlobalSettings.EmbeddingModel)
-	fmt.Printf("Collection Name: %s\n", config..GlobalSettings.ChromaCollectionName)
+	fmt.Printf("Collection Name: %s\n", config.GlobalSettings.ChromaCollectionName)
 
 	defaultDaoDocuments := []string{
 		"DAO Core Constitution (Rule 1): The community treasury must never fall below 5,000 SOL. Any proposal pushing it lower must be rejected automatically.",
