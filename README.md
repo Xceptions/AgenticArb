@@ -21,7 +21,7 @@ The agent utilizes **Retrieval-Augmented Generation (RAG)** to parse incoming pr
 
 ```text
 .
-├── backend-py/           # Python Prototyping Stack
+├── backend-py/           # Python Stack
 │   ├── agent/
 │   │   ├── database.py   # Local Chroma DB initialization & document seeding
 │   │   ├── pipeline.py   # RAG logic for semantic document retrieval
@@ -32,7 +32,7 @@ The agent utilizes **Retrieval-Augmented Generation (RAG)** to parse incoming pr
 │   ├── config.py         # Pydantic-Settings environment validation setup
 │   └── requirements.txt  # Requirement files for virtual env setup
 │
-├── backend-go/           # Production Go Stack
+├── backend-go/           # GoLang Stack
 │   ├── cmd/
 │   │   ├── seed/
 │   │   │   └── main.go   # Standalone administrative DB seeding CLI tool
@@ -124,7 +124,7 @@ go run ./cmd/server
 
 ---
 
-### 🐍 Running the Python Prototyping Stack
+### 🐍 Running the Python Stack
 
 #### Step 1: Install Python Libraries
 ```bash
